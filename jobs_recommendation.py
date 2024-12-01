@@ -3,7 +3,7 @@ import pandas as pd
 
 # Initialize the SentenceTransformer model globally
 print("Loading SentenceTransformer model...")
-model = SentenceTransformer('all-MiniLM-L6-v2')
+model = SentenceTransformer('paraphrase-MiniLM-L6-v2')
 print("Model loaded successfully.")
 
 # Global variables to store precomputed embeddings and job listings
