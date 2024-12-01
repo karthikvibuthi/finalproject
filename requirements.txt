@@ -3,3 +3,4 @@ gunicorn
 spacy
 pandas   
 tika
+pyspellchecker
