@@ -1,21 +1,27 @@
-from flask import Flask, render_template, request
+from flask import Flask, request, jsonify, render_template
+import parser as parsing_module
 import re
 
 app = Flask(__name__)
 
-def extract_email(text):
-    """Extracts email from resume text."""
-    email = re.findall(r"([^@|\s]+@[^@]+\.[^@|\s]+)", text)
-    return email[0].split()[0].strip(';') if email else None
-
-@app.route("/", methods=["GET", "POST"])
+@app.route('/')
 def index():
-    email = None
-    if request.method == "POST":
-        resume_text = request.form.get("resume_text")
-        if resume_text:
-            email = extract_email(resume_text)
-    return render_template("index.html", email=email)
+    return render_template('index.html') 
+
+@app.route('/api/parse-resume', methods=['POST'])
+def parse_resume():
+    if 'resume' not in request.files:
+        return jsonify({'error': 'No file uploaded'}), 400
+
+    file = request.files['resume']
+    
+    if file.filename == '':
+        return jsonify({'error': 'No selected file'}), 400
+
+    # Call your resume details parsing function
+    resume_data = parsing_module.extract_resume_details(file)  # Adjust according to your function
+    return jsonify(resume_data)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
