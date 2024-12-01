@@ -5,3 +5,4 @@ pandas
 tika
 pyspellchecker
 PyPDF2
+sentence-transformers
