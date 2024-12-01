@@ -4,4 +4,3 @@ spacy
 pandas   
 pyspellchecker
 PyPDF2
-sentence-transformers
