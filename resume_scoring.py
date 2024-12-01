@@ -349,38 +349,3 @@ def calculate_resume_score(resume_text):
 
     return result
 
-
-resume_text = """
-Summary
-Experienced software engineer with expertise in developing scalable applications using Python, Java, and Angular.
-
-Experience
-Software Engineer at ABC Corp
-- Developed and implemented a scalable web application using Angular and Node.js.
-- Led the migration of legacy systems to Docker containers, improving deployment time by 50%.
-
-Education
-Bachelor of Science in Computer Science
-XYZ University, 2018 - 2022
-
-Skills
-- Python
-- Java
-- Angular
-- Docker
-- Kubernetes
-
-Projects
-- Real-time chat application using React and Firebase.
-- Data analysis tool for e-commerce using Python and Machine Learning.
-"""
-
-# Run the scoring function
-result = calculate_resume_score(resume_text)
-
-# Output the result
-print("Resume Score:")
-print(f"Total Score: {result['total_score']}")
-print("Detailed Breakdown:")
-for key, value in result["breakdown"].items():
-    print(f"{key}: {value}")
