@@ -24,9 +24,6 @@ def fetch_resume(pdf_file):
 
 # Function to parse resume for specific details
 def parse_resume(resume_text):
-    # Process resume text
-    nlp_text = nlp(resume_text)
-
     # Extract scoring and specified details
     details = {
         'scores': resume_scoring.calculate_resume_score(resume_text),
