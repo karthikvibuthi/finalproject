@@ -4,3 +4,4 @@ spacy
 pandas   
 pyspellchecker
 PyPDF2
+nltk
