@@ -3,7 +3,7 @@ from collections import Counter
 from spellchecker import SpellChecker
 import pandas as pd
 import post_install
-post_install.download_spacy_model()
+#post_install.download_spacy_model()
 
 # Load SpaCy model
 nlp = spacy.load("en_core_web_sm")
