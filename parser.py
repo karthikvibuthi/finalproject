@@ -91,7 +91,8 @@ def parse_resume(resume_text):
     experience = resume_parser.extract_experience_details(experience_text)
 
     #details['experience'] = resume_parser.get_experience_section(nlp_text)
-    details['totalExperience'] = experience['total_experience_years']
+    if experience:
+        details['totalExperience'] = experience['total_experience_years']
     details['designations'] = experience['designations']
     details['companies'] = experience['companies']
     details['length'] = resume_parser.get_length(nlp_text)

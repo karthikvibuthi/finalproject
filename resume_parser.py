@@ -377,6 +377,9 @@ def extract_education_details_single_dict(text):
 
 import re
 
+import re
+from datetime import datetime
+
 def extract_experience_details(experience_text):
     """
     Extracts years of experience, designations, and company names from a given experience section text.
@@ -399,8 +402,18 @@ def extract_experience_details(experience_text):
 
     # Month-to-integer mapping for date calculations
     months = {
-        'jan': 1, 'feb': 2, 'mar': 3, 'apr': 4, 'may': 5, 'jun': 6,
-        'jul': 7, 'aug': 8, 'sep': 9, 'oct': 10, 'nov': 11, 'dec': 12
+        'jan': 1, 'january': 1,
+        'feb': 2, 'february': 2,
+        'mar': 3, 'march': 3,
+        'apr': 4, 'april': 4,
+        'may': 5,
+        'jun': 6, 'june': 6,
+        'jul': 7, 'july': 7,
+        'aug': 8, 'august': 8,
+        'sep': 9, 'september': 9,
+        'oct': 10, 'october': 10,
+        'nov': 11, 'november': 11,
+        'dec': 12, 'december': 12
     }
 
     # Iterate through each experience entry
@@ -420,12 +433,18 @@ def extract_experience_details(experience_text):
         if duration_match:
             start_year = int(duration_match.group('start_year'))
             end_year = duration_match.group('end_year')
-            start_month = months[duration_match.group('start_month').lower()]
-            end_month = months[duration_match.group('end_month').lower()]
+            start_month_name = duration_match.group('start_month').lower()
+            end_month_name = duration_match.group('end_month').lower()
+
+            # Convert month names to numbers
+            start_month = months.get(start_month_name)
+            end_month = months.get(end_month_name)
+
+            if start_month is None or end_month is None:
+                raise ValueError(f"Invalid month detected: {start_month_name} or {end_month_name}")
 
             # Convert "present" to the current year and month
             if end_year.lower() == "present":
-                from datetime import datetime
                 current_date = datetime.now()
                 end_year = current_date.year
                 end_month = current_date.month
@@ -447,6 +466,7 @@ def extract_experience_details(experience_text):
         "designations": designations,
         "companies": companies
     }
+
 
 def get_projects(text):
     # Define a list to store matched projects
