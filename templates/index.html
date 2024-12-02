@@ -185,7 +185,8 @@
       //   : window.location.origin;   // Production (Heroku) URL
 
       // const baseUrl = 'https://herokudemotest-df6c3fc32271.herokuapp.com';
-      const baseUrl = 'http://3.229.200.133:5000';
+      const baseUrl = 'http://3.229.200.133:5001';
+      //const baseUrl = 'http://127.0.0.1:5001';
 
       
 
@@ -205,32 +206,32 @@
         }
 
         const resumeData = await resumeResponse.json();
-        console.log("Resume Details:", resumeData);
+      
 
         // Display resume details
         displayResumeData(resumeData);
         displayScores(resumeData.scores);
 
-        // Second API call for jobs/events
-        // const matchResponse = await fetch(
-        //   `${baseUrl}/api/match-jobs-events`,
-        //   {
-        //     method: "POST",
-        //     body: formData,
-        //   }
-        // );
+        //Second API call for jobs/events
+        const matchResponse = await fetch(
+          `${baseUrl}/api/match-jobs-events`,
+          {
+            method: "POST",
+            body: formData,
+          }
+        );
 
-        // if (!matchResponse.ok) {
-        //   const errorData = await matchResponse.json();
-        //   alert(errorData.error || "Failed to fetch job/event recommendations");
-        //   return;
-        // }
+        if (!matchResponse.ok) {
+          const errorData = await matchResponse.json();
+          alert(errorData.error || "Failed to fetch job/event recommendations");
+          return;
+        }
 
-        // const matchData = await matchResponse.json();
+        const matchData = await matchResponse.json();
 
-        // // Display job and event recommendations
-        // displayJobs(matchData.jobs, matchData.totalJobs);
-        // displayEvents(matchData.events, matchData.totalEvents);
+        // Display job and event recommendations
+        displayJobs(matchData.jobs, matchData.totalJobs);
+        displayEvents(matchData.events, matchData.totalEvents);
       } catch (error) {
         console.error("Error:", error);
         alert("Error uploading and processing resume");

@@ -3,7 +3,8 @@ import resume_scoring as scoring
 import spacy
 import nltk
 import resume_parser
-
+import jobs_recommendation as jr
+import events_recommendations as er
 
 # Ensure NLTK resources are available
 nltk.download('wordnet')
