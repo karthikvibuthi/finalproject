@@ -143,7 +143,7 @@ import sys
 
 # Set up logging in append mode with a specific file for job scraping
 logging.basicConfig(
-    filename='/home/ubuntu/finalproject/logs/job_scraping.log',  # Specific log file for job scraping
+    filename='/home/ubuntu/finalproject/logs/scraping.log',  # Specific log file for job scraping
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     filemode='a'  # Ensure logging happens in append mode

@@ -186,7 +186,7 @@ import pandas as pd
 
 # Setup logging in append mode with a specific file for event scraping
 logging.basicConfig(
-    filename='/home/ubuntu/finalproject/logs/events_scraper.log',  # Specific log file for event scraping
+    filename='/home/ubuntu/finalproject/logs/scraping.log',  # Specific log file for event scraping
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     filemode='a'  # Ensure logging happens in append mode
