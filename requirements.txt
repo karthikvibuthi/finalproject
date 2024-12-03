@@ -1,8 +1,13 @@
 flask
-gunicorn     
+gunicorn
 spacy
-pandas   
+pandas
 pyspellchecker
 PyPDF2
 nltk
-sentence-transformers 
+sentence-transformers
+selenium
+webdriver-manager
+beautifulsoup4
+requests
+
