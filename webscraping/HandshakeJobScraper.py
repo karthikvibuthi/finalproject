@@ -138,21 +138,26 @@ import sys
 import pandas as pd
 from bs4 import BeautifulSoup
 
-# Setup logging
+import logging
+import sys
+
+# Set up logging in append mode with a specific file for job scraping
 logging.basicConfig(
-    filename='/home/ubuntu/finalproject/logs/scraper.log',
+    filename='/home/ubuntu/finalproject/logs/job_scraping.log',  # Specific log file for job scraping
     level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s'
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    filemode='a'  # Ensure logging happens in append mode
 )
 
-logging.info("Starting scraping for events...")
+logging.info("Starting scraping for Jobs...")
 try:
     # Call scraping functions here
     scrape_employer_data(URL, cookies, headers, params, "job_listings.csv", num_pages=15)
-    logging.info("Event scraping completed successfully.")
+    logging.info("Job scraping completed successfully.")
 except Exception as e:
     logging.error(f"Error during event scraping: {e}")
     sys.exit(1)
+
 import pandas as pd
 
 df = pd.read_csv('job_listings.csv')

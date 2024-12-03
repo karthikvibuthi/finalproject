@@ -181,20 +181,23 @@ import pandas as pd
 from bs4 import BeautifulSoup
    
 import logging
+import sys
+import pandas as pd
 
-# Setup logging
+# Setup logging in append mode with a specific file for event scraping
 logging.basicConfig(
-    filename='/home/ubuntu/finalproject/logs/scraper.log',
+    filename='/home/ubuntu/finalproject/logs/events_scraper.log',  # Specific log file for event scraping
     level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s'
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    filemode='a'  # Ensure logging happens in append mode
 )
 
 logging.info("Starting scraping for events...")
 try:
     # Call scraping functions here
-    scrape_event_data(page_source)
-    df= pd.read_csv("events_list_latest_test.csv")
-    df["description"] = df["description"].apply(clean_html)
+    scrape_event_data(page_source)  # Ensure that this function is defined elsewhere
+    df = pd.read_csv("events_list.csv")
+    df["description"] = df["description"].apply(clean_html)  # Ensure that the clean_html function is defined elsewhere
     df.rename(columns={
         'Type': 'event_type',
         'id': 'event_id',
@@ -209,7 +212,8 @@ try:
     logging.info("Event scraping completed successfully.")
 except Exception as e:
     logging.error(f"Error during event scraping: {e}")
-    import sys
+    sys.exit(1)
+
 
 
 
