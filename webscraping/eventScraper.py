@@ -30,15 +30,18 @@ import json
 import csv
 from bs4 import BeautifulSoup
 
-# Set up Selenium WebDriver with stealth options
 options = webdriver.ChromeOptions()
 options.add_argument("start-maximized")
+options.add_argument("--headless")  # Run in headless mode
+options.add_argument("--no-sandbox")  # Disable sandboxing for headless
+options.add_argument("--disable-dev-shm-usage")  # Fixes issues with shared memory
+
 # Uncomment for headless if needed
 # options.add_argument("--headless")
 options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_experimental_option('useAutomationExtension', False)
 
-service = ChromeService(ChromeDriverManager(driver_version="129.0.6668.59").install())
+service = ChromeService(ChromeDriverManager(driver_version="131.0.6778.85").install())
 driver = webdriver.Chrome(options=options, service=service)
 # Set the script timeout to a higher value (e.g., 60 seconds)
 
