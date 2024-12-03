@@ -6,7 +6,7 @@ from datetime import datetime
 repo_dir = '/home/ubuntu/finalproject'
 
 # Log the status of the job
-log_file = '/home/ubuntu/finalproject/scripts/status_log.txt'
+log_file = '/home/ubuntu/finalproject/logs/scraping.log'
 log_message = f"{datetime.now()} - Job and Event scraping completed successfully.\n"
 
 # Append log message to the file
