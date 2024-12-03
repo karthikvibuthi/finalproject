@@ -184,6 +184,19 @@ import logging
 import sys
 import pandas as pd
 
+
+def clean_html(text):
+    """
+    Removes HTML tags from the input text.
+    
+    Args:
+    - text: A string with HTML content.
+    
+    Returns:
+    - A cleaned string without HTML tags.
+    """
+    return BeautifulSoup(text, "html.parser").get_text()
+
 # Setup logging in append mode with a specific file for event scraping
 logging.basicConfig(
     filename='/home/ubuntu/finalproject/logs/scraping.log',  # Specific log file for event scraping
@@ -217,15 +230,4 @@ except Exception as e:
 
 
 
-def clean_html(text):
-    """
-    Removes HTML tags from the input text.
-    
-    Args:
-    - text: A string with HTML content.
-    
-    Returns:
-    - A cleaned string without HTML tags.
-    """
-    return BeautifulSoup(text, "html.parser").get_text()
 
