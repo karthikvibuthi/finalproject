@@ -1,0 +1,7 @@
+2024-12-03 17:34:33,007 - INFO - Starting scraping for Jobs...
+2024-12-03 17:34:33,008 - INFO - Starting scraping for events...
+2024-12-03 17:36:25,894 - ERROR - Error during event scraping: name 'clean_html' is not defined
+2024-12-03 17:38:25,307 - INFO - Job scraping completed successfully.
+2024-12-03 18:04:51.327430 - Job and Event scraping completed successfully.
+2024-12-03 18:15:41.304830 - Job and Event scraping completed successfully.
+2024-12-03 18:21:13.934573 - Job and Event scraping completed successfully.
