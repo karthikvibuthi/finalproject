@@ -102,7 +102,7 @@ Ensure your job and event scraping scripts are scheduled using a systemd service
 gunicorn -w 4 app:app
 ```
 
-## 🛠️ Usage Instructions
+## 🛠️ Usage Instructions on Cloud Instance
 Access the application at [http://3.229.200.133:5001](http://3.229.200.133:5001) in your browser.
 Upload a resume in PDF format for analysis.
 
