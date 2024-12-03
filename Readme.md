@@ -55,7 +55,10 @@ The growing volume of resumes and job listings makes it challenging for job seek
 - **JavaScript**: For dynamic interactivity  
 
 ### **Data**
-- Scraped job listings and events stored as CSV files.  
+- Scraped job listings and events stored as CSV files.
+- Portal - https://app.joinhandshake.com/explore
+- Portal - https://wellfound.com/
+- 
 - NLP preprocessing using SpaCy and regex for parsing resumes.  
 
 ### **Deployment**
