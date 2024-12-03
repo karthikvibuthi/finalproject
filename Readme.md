@@ -112,12 +112,14 @@ Upload a resume in PDF format for analysis.
 - Tailored Event Suggestions
 
 ## 🖼️ Screenshots
+
 ### Upload Resume
 
+![alt text](image-3.png)
 ### Resume Score
-
+![alt text](image.png)
 ### Job Recommendations
-
+![alt text](image-2.png)
 ## 🔮 Future Directions
 ### Enhanced Storage:
 - Transition from CSV files to MongoDB for scalability.
