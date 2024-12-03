@@ -15,6 +15,6 @@ with open(log_file, 'a') as f:
 
 # Commit and push to GitHub
 os.chdir(repo_dir)
-subprocess.run(['git', 'add', 'scripts/logs/scraping.log'])
+subprocess.run(['git', 'add', 'logs/scraping.log'])
 subprocess.run(['git', 'commit', '-m', 'Updated scraping log'])
 subprocess.run(['git', 'push', 'origin', 'master'])
