@@ -303,4 +303,5 @@ df['expiration_date'] = pd.to_datetime(df['expiration_date'])
 df['apply_start'] = pd.to_datetime(df['apply_start'])
 df.drop(columns=["sections"],inplace=True)
 df["id"] = df["posting_url"].apply(lambda x: x.split('/')[-1])
+df["company_type"]="Handshake"
 df.to_csv("job_listings_latest_skills.csv")
