@@ -304,5 +304,5 @@ df['apply_start'] = pd.to_datetime(df['apply_start'])
 df.drop(columns=["sections"],inplace=True)
 df["id"] = df["posting_url"].apply(lambda x: x.split('/')[-1])
 df["company_type"]="Handshake"
-df.to_csv("job_listings_latest_skills.csv")
+df.to_csv("job_listings_latest_skills_new.csv")
 print("Job scraping completed successfully job_list_final_skills.csv")

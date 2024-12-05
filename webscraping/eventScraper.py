@@ -221,7 +221,7 @@ try:
         'Event URL': 'event_url',
         'description': 'description'
     }, inplace=True)
-    df.to_csv("events_list_latest_2.csv")
+    df.to_csv("events_list_latest_new.csv")
     logging.info("Event scraping completed successfully.")
 except Exception as e:
     logging.error(f"Error during event scraping: {e}")
