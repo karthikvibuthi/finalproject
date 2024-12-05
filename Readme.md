@@ -55,7 +55,10 @@ The growing volume of resumes and job listings makes it challenging for job seek
 - **JavaScript**: For dynamic interactivity  
 
 ### **Data**
-- Scraped job listings and events stored as CSV files.  
+- Scraped job listings and events stored as CSV files.
+- Portal - https://app.joinhandshake.com/explore
+- Portal - https://wellfound.com/
+- 
 - NLP preprocessing using SpaCy and regex for parsing resumes.  
 
 ### **Deployment**
@@ -102,7 +105,7 @@ Ensure your job and event scraping scripts are scheduled using a systemd service
 gunicorn -w 4 app:app
 ```
 
-## 🛠️ Usage Instructions
+## 🛠️ Usage Instructions on Cloud Instance
 Access the application at [http://3.229.200.133:5001](http://3.229.200.133:5001) in your browser.
 Upload a resume in PDF format for analysis.
 
