@@ -153,9 +153,9 @@ logging.info("Starting scraping for Jobs...")
 try:
     # Call scraping functions here
     scrape_employer_data(URL, cookies, headers, params, "job_listings.csv", num_pages=15)
-    logging.info("Job scraping completed successfully.")
+    logging.info("Job scraping completed successfully job_list.csv.")
 except Exception as e:
-    logging.error(f"Error during event scraping: {e}")
+    logging.error(f"Error during Job scraping: {e}")
     sys.exit(1)
 
 import pandas as pd
@@ -305,3 +305,4 @@ df.drop(columns=["sections"],inplace=True)
 df["id"] = df["posting_url"].apply(lambda x: x.split('/')[-1])
 df["company_type"]="Handshake"
 df.to_csv("job_listings_latest_skills.csv")
+print("Job scraping completed successfully job_list_final_skills.csv")
