@@ -116,6 +116,10 @@ Upload a resume in PDF format for analysis.
 
 ## 🖼️ Screenshots
 
+### Comparison with other platforms
+![alt text] (![WhatsApp Image 2024-12-06 at 2 32 00 PM](https://github.com/user-attachments/assets/03e9f545-ded0-49cd-b23d-ded9a754e737)
+
+
 ### Upload Resume
 
 ![alt text](image-3.png)
